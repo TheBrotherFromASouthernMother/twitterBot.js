@@ -1,0 +1,19 @@
+{
+  "name": "npm_demo",
+  "version": "1.0.0",
+  "description": "EXample npm",
+  "main": "BOT.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rainbow",
+    "awesome"
+  ],
+  "author": "Christian Lowe",
+  "license": "MIT",
+  "dependencies": {
+    "twit": "^2.2.9"
+  }
+}
