@@ -1,0 +1,44 @@
+From b45845e9746f5ec6d9d5d2710b8f870e598a2ba3 Mon Sep 17 00:00:00 2001
+From: TheBrotherFromASouthernMother <christglowe@gmail.com>
+Date: Mon, 18 Sep 2017 23:22:08 -0500
+Subject: [PATCH] Add functionality to allow the bot to take search terms for
+ the query from the command line
+
+---
+ node2/bot.js | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/node2/bot.js b/node2/bot.js
+index f8e6921..a00b462 100644
+--- a/node2/bot.js
++++ b/node2/bot.js
+@@ -1,15 +1,18 @@
+-console.log("The Bot is starting");
++console.log("The Bot is starting...");
+ 
+ const twit = require('twit');
+ const config = require('./config.js');
+ //console.log(config);
+ const T = new twit(config);
++let args = process.argv.slice(2).toString();
++let searchTerms = args.replace(/,/g, " ");
++
+ 
+ let parameters= {
+-  q: 'ACL since:2016-07-12',
++  q:`${searchTerms} since:2016-07-12`,
+   count: 11,
+   lang: 'en',
+-  geocode: "30.2672,-97.7431,5mi ",
++  //geocode: "30.2672,-97.7431,5mi ",
+   result_type: "popular"
+ };
+ 
+@@ -20,4 +23,3 @@ const gotData = function(err, data, response) {
+ };
+ 
+ T.get('search/tweets', parameters, gotData);
+-console.log(process.argv[2])
+-- 
+2.14.1.windows.1
+

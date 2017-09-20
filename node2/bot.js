@@ -12,7 +12,7 @@ let parameters= {
   q:`${searchTerms} since:2016-07-12`,
   count: 11,
   lang: 'en',
-  //geocode: "30.2672,-97.7431,5mi ",
+  //geocode: "40.730610,-73.935242,30mi ",
   result_type: "popular"
 };
 
