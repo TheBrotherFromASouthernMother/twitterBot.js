@@ -2,8 +2,10 @@ console.log("The Bot is starting...");
 
 const twit = require('twit');
 const config = require('./config.js');
-//console.log(config);
+
+
 const T = new twit(config);
+
 let args = process.argv.slice(2).toString();
 let searchTerms = args.replace(/,/g, " ");
 
